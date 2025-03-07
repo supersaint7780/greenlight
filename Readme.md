@@ -31,3 +31,27 @@ Our Greenlight API will support the following endpoints and actions:
 ## Getting Started
 
 To get started with the Greenlight API, follow the instructions in the book and refer to this README for endpoint details.
+
+## Project Structure
+
+```
+.
+├── bin
+├── cmd
+│   └── api
+├── internal
+├── migrations
+├── remote
+├── go.mod
+└── Makefile
+```
+
+### Directory and File Overview
+
+- **bin**: Contains the compiled application binaries, ready for deployment to a production server.
+- **cmd/api**: Contains the application-specific code for the Greenlight API application, including the server code, HTTP request handling, and authentication management.
+- **internal**: Contains various ancillary packages used by the API, such as database interaction, data validation, and email sending. This directory holds reusable code that is not application-specific.
+- **migrations**: Contains the SQL migration files for the database.
+- **remote**: Contains the configuration files and setup scripts for the production server.
+- **go.mod**: Declares the project dependencies, versions, and module path.
+- **Makefile**: Contains recipes for automating common administrative tasks, such as auditing Go code, building binaries, and executing database migrations.
