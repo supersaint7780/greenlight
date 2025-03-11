@@ -55,3 +55,8 @@ To get started with the Greenlight API, follow the instructions in the book and 
 - **remote**: Contains the configuration files and setup scripts for the production server.
 - **go.mod**: Declares the project dependencies, versions, and module path.
 - **Makefile**: Contains recipes for automating common administrative tasks, such as auditing Go code, building binaries, and executing database migrations.
+
+### Postgress docker setup command
+```sh
+docker run --name greenlight_postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -v postgres_data:/var/lib/postgresql/data -d postgres:latest
+```
