@@ -60,3 +60,14 @@ To get started with the Greenlight API, follow the instructions in the book and 
 ```sh
 docker run --name greenlight_postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -v postgres_data:/var/lib/postgresql/data -d postgres:latest
 ```
+
+### DB Migration Issue
+If you are using PostgreSQL v15, you may see error: 
+pq: permission denied for schema public... when running the above command. This is because v15+ revokes CREATE from all users except a database owner. You can fix it with:
+```sql
+-- Set owner:
+ALTER DATABASE greenlight OWNER TO greenlight;
+
+-- And if that didn't work:
+GRANT CREATE ON DATABASE greenlight TO greenlight;
+```
